@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  story: MyString
+  author_id: MyString
+  publish_flag: 1
+
+two:
+  story: MyString
+  author_id: MyString
+  publish_flag: 1
