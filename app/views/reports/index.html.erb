@@ -3,3 +3,9 @@
   <li> <%=h.story %></li>
 
 <% end %>
+
+<h1>New Entry form</h1>
+<%= form_for @addReport do |h| %>
+  <%= h.text_field :story %>
+  <%= h.submit 'add' %>
+  <% end %>
