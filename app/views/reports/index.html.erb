@@ -1,10 +1,8 @@
 <h1>Reports#index</h1>
-<%= params.inspect %>
-<% @reports.each do |h| %>
-  <li> <%=h.story %></li>
-
-<% end %>
-<%= fields_for @newReport do |h| %>
+<%= form_for (@newReport) do |h| %>
   <%= h.text_field :story %>
   <%= h.submit 'add' %>
+<% end %><% @reports.each do |h| %>
+  <li> <%=h.story %></li>
+
 <% end %>

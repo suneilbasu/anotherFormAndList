@@ -3,12 +3,14 @@ class ReportsController < ApplicationController
     @reports = Report.all
     @newReport = Report.new
   end
+
+
   def create
     @newReport = Report.new(report_params)
     if @newReport.save
-      redirect_to :action => 'root'
+      redirect_to :action => 'index'
     else
-      render(:action => 'new')
+      render(:action => 'index ')
     end
   end
   def report_params
