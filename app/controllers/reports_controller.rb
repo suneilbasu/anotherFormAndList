@@ -1,9 +1,18 @@
 class ReportsController < ApplicationController
   def index
     @reports = Report.all
-    @addReport = Report.new
+    @newReport = Report.new
   end
-  def show
-    render(:action => 'new')
+  def create
+    @newReport = Report.new(report_params)
+    if @newReport.save
+      redirect_to :action => 'root'
+    else
+      render(:action => 'new')
+    end
   end
+  def report_params
+    params.require(:report).permit(:story)
+  end
+
 end

@@ -1,2 +1,20 @@
 <h1>Reports#new</h1>
 <p>Find me in app/views/reports/new.html.erb</p>
+<h1>New Entry form</h1>
+<% if @addReport.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@addReport.errors.count,"error")%> prohibited
+    </h2>
+    <ul>
+      <% @addReport.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+<%= fields_for @addReport do |h| %>
+  <%= h.text_field :story %>
+  <%= h.submit 'add' %>
+<% end %>
